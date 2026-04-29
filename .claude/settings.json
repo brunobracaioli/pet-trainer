@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "opusplan",
   "permissions": {
     "allow": [
       "Bash(pnpm install)",
@@ -88,24 +89,24 @@
       "Bash(yarn publish:*)",
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
-      "Read(.env)",
-      "Read(.env.local)",
-      "Read(.env.production)",
-      "Read(.env.development)",
-      "Read(.env.staging)",
-      "Edit(.env)",
-      "Edit(.env.local)",
-      "Edit(.env.production)",
-      "Edit(.env.development)",
-      "Edit(.env.staging)",
-      "Write(.env)",
-      "Write(.env.local)",
-      "Write(.env.production)",
-      "Write(.env.development)",
-      "Write(.env.staging)",
-      "Read(~/.pet-trainer/credentials.json)",
-      "Edit(~/.pet-trainer/credentials.json)",
-      "Write(~/.pet-trainer/credentials.json)"
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/.env.production)",
+      "Read(**/.env.development)",
+      "Read(**/.env.staging)",
+      "Edit(**/.env)",
+      "Edit(**/.env.local)",
+      "Edit(**/.env.production)",
+      "Edit(**/.env.development)",
+      "Edit(**/.env.staging)",
+      "Write(**/.env)",
+      "Write(**/.env.local)",
+      "Write(**/.env.production)",
+      "Write(**/.env.development)",
+      "Write(**/.env.staging)",
+      "Read($HOME/.pet-trainer/credentials.json)",
+      "Edit($HOME/.pet-trainer/credentials.json)",
+      "Write($HOME/.pet-trainer/credentials.json)"
     ]
   },
   "hooks": {
@@ -131,9 +132,16 @@
           {
             "type": "command",
             "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/remind-rls-coverage.sh"
+          },
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/docs-reminder.js"
           }
         ]
       }
     ]
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS":"1"
   }
 }
