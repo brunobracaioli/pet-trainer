@@ -1,0 +1,19 @@
+title = "pet-trainer gitleaks config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "pet-trainer-token"
+description = "PET_TRAINER_TOKEN credential leaked in source"
+regex = '''PET_TRAINER_TOKEN=[A-Za-z0-9._-]{20,}'''
+keywords = ["PET_TRAINER_TOKEN"]
+
+[allowlist]
+description = "Allowlist test fixtures and docs that intentionally reference the env var name"
+paths = [
+  '''SPEC\.md''',
+  '''CLAUDE\.md''',
+  '''docs/.+\.md''',
+  '''\.claude/.+''',
+]

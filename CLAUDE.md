@@ -8,6 +8,40 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 When asked to "implement X" or "build the CLI", expect to be bootstrapping the structure described in SPEC.md §14 from scratch (Turborepo monorepo with `apps/web`, `apps/cli`, `packages/domain`, `packages/quest-engine`). Do not assume any of that exists until you've verified it on disk.
 
+## Implementation steps (docs/steps/)
+
+The MVP is broken into **27 atomic implementation steps** under `docs/steps/<sprint>/`. Each step is a self-contained spec with YAML frontmatter (`status`, `spec_refs`, `depends_on`, `deliverables`, `acceptance`) and a body (Goal, Context, Implementation outline, Verification). **Master roadmap:** [`docs/implementation-plan.md`](docs/implementation-plan.md)
+
+### Mandatory execution workflow
+
+Before coding any feature:
+
+1. Read the relevant step spec at `docs/steps/<sprint>/<step-id>.md`.
+2. Check `depends_on` — steps within a sprint must be executed in order unless the PR description explicitly justifies skipping.
+3. Update `status:` in the frontmatter: `not-started` → `in-progress` when you start; `done` when acceptance criteria pass.
+4. Verify **all** `acceptance` criteria before marking `done`.
+5. Each step ships as **one PR**; link to `docs/steps/<step-id>.md` in the PR description.
+
+### Agent teams (ultrathink)
+
+`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` is set in `.claude/settings.json`. For non-trivial steps, delegate to agent teams by spawning parallel agents:
+
+- Use `subagent_type` to pick the right specialist (e.g., `migration-reviewer` for DB steps, `security-scanner` for auth/endpoint steps, `arch-reviewer` after any structural change).
+- Independent subtasks within a step can run as parallel agents in a single message.
+- Team compositions per step type will be defined in a subsequent planning session.
+
+### Step index (27 total)
+
+Sprint 0 (Bootstrap): [00-01](docs/steps/00-sprint0-bootstrap/00-01-monorepo-scaffold.md) · [00-02](docs/steps/00-sprint0-bootstrap/00-02-tooling-baseline.md) · [00-03](docs/steps/00-sprint0-bootstrap/00-03-supabase-init.md) · [00-04](docs/steps/00-sprint0-bootstrap/00-04-vercel-and-ci.md) · [00-05](docs/steps/00-sprint0-bootstrap/00-05-adrs-and-docs.md)
+
+Sprint 1 (Foundation): [01-01](docs/steps/01-sprint1-foundation/01-01-domain-package.md) · [01-02](docs/steps/01-sprint1-foundation/01-02-supabase-schema-and-rls.md) · [01-03](docs/steps/01-sprint1-foundation/01-03-quest-engine-package.md) · [01-04](docs/steps/01-sprint1-foundation/01-04-events-edge-handler.md) · [01-05](docs/steps/01-sprint1-foundation/01-05-auth-supabase-github.md) · [01-06](docs/steps/01-sprint1-foundation/01-06-cli-init-status.md) · [01-07](docs/steps/01-sprint1-foundation/01-07-seed-quests-basics.md)
+
+Sprint 2 (Quest catalog): [02-01](docs/steps/02-sprint2-quest-catalog/02-01-quest-catalog-mvp.md) · [02-02](docs/steps/02-sprint2-quest-catalog/02-02-evolution-stages.md) · [02-03](docs/steps/02-sprint2-quest-catalog/02-03-cli-feed-train-slash.md) · [02-04](docs/steps/02-sprint2-quest-catalog/02-04-offline-buffer-sync.md) · [02-05](docs/steps/02-sprint2-quest-catalog/02-05-anti-cheat-heuristic.md)
+
+Sprint 3 (Web): [03-01](docs/steps/03-sprint3-web/03-01-landing-page.md) · [03-02](docs/steps/03-sprint3-web/03-02-dashboard.md) · [03-03](docs/steps/03-sprint3-web/03-03-leaderboard.md) · [03-04](docs/steps/03-sprint3-web/03-04-public-profile.md) · [03-05](docs/steps/03-sprint3-web/03-05-docs-as-code.md)
+
+Sprint 4 (Launch): [04-01](docs/steps/04-sprint4-launch/04-01-threat-model.md) · [04-02](docs/steps/04-sprint4-launch/04-02-rls-pgtap-tests.md) · [04-03](docs/steps/04-sprint4-launch/04-03-e2e-playwright.md) · [04-04](docs/steps/04-sprint4-launch/04-04-observability.md) · [04-05](docs/steps/04-sprint4-launch/04-05-publish-launch.md)
+
 ## Product in one sentence
 
 `pet-trainer` is a terminal Tamagotchi distributed via npm + PyPI that gamifies learning Claude Code: every Claude Code tool call is captured by an HTTP hook, sent to a Vercel-hosted API, and used to award XP / evolve a pet / fill a leaderboard at `pet.specops.black`. SPEC.md §0 has the full pitch.

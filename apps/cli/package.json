@@ -1,0 +1,24 @@
+{
+  "name": "@specops/pet-trainer",
+  "version": "0.1.0",
+  "description": "Terminal Tamagotchi that gamifies learning Claude Code",
+  "license": "MIT",
+  "bin": {
+    "pet": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}

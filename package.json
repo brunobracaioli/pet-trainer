@@ -1,0 +1,48 @@
+{
+  "name": "pet-trainer",
+  "private": true,
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "vitest run --passWithNoTests",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md,yaml,yml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md,yaml,yml}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{json,md,yaml,yml}": [
+      "prettier --write"
+    ],
+    "**/*": [
+      "secretlint"
+    ]
+  },
+  "devDependencies": {
+    "@secretlint/secretlint-rule-pattern": "^9.3.4",
+    "@secretlint/secretlint-rule-preset-recommend": "^9.3.4",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-import": "^2.32.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.8.3",
+    "secretlint": "^9.3.4",
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.0",
+    "vitest": "^2.1.9"
+  },
+  "packageManager": "pnpm@10.18.2"
+}

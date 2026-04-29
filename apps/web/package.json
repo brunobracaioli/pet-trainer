@@ -1,0 +1,14 @@
+{
+  "name": "@specops/web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "build": "echo 'build: next build pending Sprint 1'",
+    "dev": "echo 'dev: next dev pending Sprint 1'"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}
