@@ -24,6 +24,7 @@ module.exports = {
     '.turbo/',
     'coverage/',
     '*.generated.ts',
+    'packages/domain/src/database.types.ts',
     'supabase/.branches/',
   ],
 }

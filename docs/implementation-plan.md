@@ -38,13 +38,13 @@
 
 | Step                                        | Spec file                                                                                        | Status      | Depends on          |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------ | ----------- | ------------------- |
-| 01-01 · Domain package (Zod schemas)        | [01-01-domain-package.md](steps/01-sprint1-foundation/01-01-domain-package.md)                   | not-started | 00-02               |
-| 01-02 · Supabase schema + RLS               | [01-02-supabase-schema-and-rls.md](steps/01-sprint1-foundation/01-02-supabase-schema-and-rls.md) | not-started | 00-03, 01-01        |
-| 01-03 · Quest engine package                | [01-03-quest-engine-package.md](steps/01-sprint1-foundation/01-03-quest-engine-package.md)       | not-started | 01-01               |
-| 01-04 · /events Edge handler                | [01-04-events-edge-handler.md](steps/01-sprint1-foundation/01-04-events-edge-handler.md)         | not-started | 01-01, 01-02, 01-03 |
-| 01-05 · Auth (GitHub OAuth + CLI endpoints) | [01-05-auth-supabase-github.md](steps/01-sprint1-foundation/01-05-auth-supabase-github.md)       | not-started | 00-04, 01-02        |
-| 01-06 · CLI init + status                   | [01-06-cli-init-status.md](steps/01-sprint1-foundation/01-06-cli-init-status.md)                 | not-started | 01-05               |
-| 01-07 · Seed quests — basics                | [01-07-seed-quests-basics.md](steps/01-sprint1-foundation/01-07-seed-quests-basics.md)           | not-started | 01-02, 01-03        |
+| 01-01 · Domain package (Zod schemas)        | [01-01-domain-package.md](steps/01-sprint1-foundation/01-01-domain-package.md)                   | done        | 00-02               |
+| 01-02 · Supabase schema + RLS               | [01-02-supabase-schema-and-rls.md](steps/01-sprint1-foundation/01-02-supabase-schema-and-rls.md) | in-progress | 00-03, 01-01        |
+| 01-03 · Quest engine package                | [01-03-quest-engine-package.md](steps/01-sprint1-foundation/01-03-quest-engine-package.md)       | done        | 01-01               |
+| 01-04 · /events Edge handler                | [01-04-events-edge-handler.md](steps/01-sprint1-foundation/01-04-events-edge-handler.md)         | done        | 01-01, 01-02, 01-03 |
+| 01-05 · Auth (GitHub OAuth + CLI endpoints) | [01-05-auth-supabase-github.md](steps/01-sprint1-foundation/01-05-auth-supabase-github.md)       | done        | 00-04, 01-02        |
+| 01-06 · CLI init + status                   | [01-06-cli-init-status.md](steps/01-sprint1-foundation/01-06-cli-init-status.md)                 | done        | 01-05               |
+| 01-07 · Seed quests — basics                | [01-07-seed-quests-basics.md](steps/01-sprint1-foundation/01-07-seed-quests-basics.md)           | in-progress | 01-02, 01-03        |
 
 ---
 

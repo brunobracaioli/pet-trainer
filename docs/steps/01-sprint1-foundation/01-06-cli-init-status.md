@@ -2,7 +2,7 @@
 id: 01-06-cli-init-status
 sprint: 1
 order: 6
-status: not-started
+status: done
 spec_refs: ['§6.1', '§6.2', '§6.3', '§6.4', '§8.2']
 depends_on: [01-05-auth-supabase-github]
 deliverables:

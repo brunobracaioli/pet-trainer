@@ -2,7 +2,7 @@
 id: 01-04-events-edge-handler
 sprint: 1
 order: 4
-status: not-started
+status: done
 spec_refs: ['§8.3', '§8.4', '§5.2', '§10.1', '§10.2', '§3.3']
 depends_on: [01-01-domain-package, 01-02-supabase-schema-and-rls, 01-03-quest-engine-package]
 deliverables:

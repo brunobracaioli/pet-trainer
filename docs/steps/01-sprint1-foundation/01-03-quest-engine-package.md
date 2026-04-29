@@ -2,7 +2,7 @@
 id: 01-03-quest-engine-package
 sprint: 1
 order: 3
-status: not-started
+status: done
 spec_refs: ['§7.1', '§3.3', '§8.4']
 depends_on: [01-01-domain-package]
 deliverables:

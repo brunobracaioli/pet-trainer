@@ -2,7 +2,7 @@
 id: 01-07-seed-quests-basics
 sprint: 1
 order: 7
-status: not-started
+status: in-progress
 spec_refs: ['§7.1', '§7.2', '§7.3', '§11', '§5.1']
 depends_on: [01-02-supabase-schema-and-rls, 01-03-quest-engine-package]
 deliverables:

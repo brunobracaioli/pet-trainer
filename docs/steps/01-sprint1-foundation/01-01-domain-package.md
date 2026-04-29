@@ -2,7 +2,7 @@
 id: 01-01-domain-package
 sprint: 1
 order: 1
-status: not-started
+status: done
 spec_refs: ['§5.1', '§8.3', '§7.1', '§11']
 depends_on: [00-02-tooling-baseline]
 deliverables:

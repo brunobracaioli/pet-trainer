@@ -2,7 +2,7 @@
 id: 01-02-supabase-schema-and-rls
 sprint: 1
 order: 2
-status: not-started
+status: in-progress
 spec_refs: ['§5.1', '§5.2', '§10.3']
 depends_on: [00-03-supabase-init, 01-01-domain-package]
 deliverables:

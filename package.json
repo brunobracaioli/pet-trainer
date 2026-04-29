@@ -13,6 +13,7 @@
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,json,md,yaml,yml}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,json,md,yaml,yml}\"",
+    "db:types": "supabase gen types typescript --local > packages/domain/src/database.types.ts",
     "prepare": "husky"
   },
   "lint-staged": {

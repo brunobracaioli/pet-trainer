@@ -2,7 +2,7 @@
 id: 01-05-auth-supabase-github
 sprint: 1
 order: 5
-status: not-started
+status: done
 spec_refs: ['§6.1', '§8.2', '§3.1', '§10.1', '§10.4', '§13']
 depends_on: [00-04-vercel-and-ci, 01-02-supabase-schema-and-rls]
 deliverables:

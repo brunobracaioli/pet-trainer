@@ -4,7 +4,7 @@
   "description": "Terminal Tamagotchi that gamifies learning Claude Code",
   "license": "MIT",
   "bin": {
-    "pet": "./dist/cli.js"
+    "pet": "./dist/index.js"
   },
   "main": "./dist/index.js",
   "files": [
@@ -19,6 +19,14 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@types/node": "^20.19.39",
     "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@specops/domain": "workspace:*",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "open": "^8.4.2",
+    "ora": "^5.4.1"
   }
 }

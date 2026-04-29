@@ -54,8 +54,8 @@ enable_confirmations = false
 
 [auth.external.github]
 enabled = true
-client_id = "env(GITHUB_CLIENT_ID)"
-secret = "env(GITHUB_CLIENT_SECRET)"
+client_id = "env(SUPABASE_AUTH_GITHUB_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GITHUB_SECRET)"
 redirect_uri = "http://127.0.0.1:54321/auth/v1/callback"
 
 [edge_runtime]
