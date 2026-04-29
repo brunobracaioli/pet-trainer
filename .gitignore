@@ -1,0 +1,76 @@
+# --- Secrets / env ---
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+!.env.example
+
+# --- Node / pnpm / Turborepo ---
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.turbo/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# --- Next.js ---
+.next/
+next-env.d.ts
+
+# --- Vercel ---
+.vercel/
+
+# --- Supabase ---
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# --- Testing ---
+coverage/
+.nyc_output/
+playwright-report/
+playwright/.cache/
+test-results/
+
+# --- Python (CLI wrapper / tooling) ---
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Editors / IDEs ---
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs / caches ---
+*.log
+logs/
+.cache/
+
+# --- Claude Code local overrides ---
+.claude/settings.local.json
+.claude/.credentials.json
+
+# --- pet-trainer offline buffer (per SPEC.md §3.3) ---
+.pet-trainer/
